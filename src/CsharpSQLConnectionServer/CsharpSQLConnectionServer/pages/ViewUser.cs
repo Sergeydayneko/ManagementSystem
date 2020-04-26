@@ -30,7 +30,6 @@ namespace CS_CRUD_SQLServer
             lbl_lname.Text = CSVar.selected_lname;
             lbl_email.Text = CSVar.selected_email;
             lbl_ulevel.Text = CSVar.selected_userlevel.ToString();
-            //CSVar.Clear();//clear data after loading
         }
     }
 }
