@@ -26,7 +26,6 @@ namespace CS_CRUD_SQLServer
 
         private void btn_manageUser_Click(object sender, EventArgs e)
         {
-            //SHOW USERMANAGEMENT
             UserManagement UManage = new UserManagement();
             UManage.Show();
 
