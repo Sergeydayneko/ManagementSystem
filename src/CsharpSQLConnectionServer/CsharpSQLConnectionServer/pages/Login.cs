@@ -28,29 +28,27 @@ namespace CS_CRUD_SQLServer
             cmd.Parameters.AddWithValue("@pass", txt_loginPW.Text);
 
             conn.Open();
-            //cmd.ExecuteNonQuery();
+
             var reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
-                //ASSIGN USER LEVEL TO LOCAL VAR
                 CSVar.userLevel = (int)reader[0];
 
-                //CHECK IF LOGGED SUCCESSFULY
                 if (CSVar.userLevel > 0)
                 {
                     CSTool.infoMessage("Successfully logged in.");
-                    //SHOW CPANEL if a valid user
+
                     if (CSULevel.User() || CSULevel.Support() || CSULevel.Admin())
                     {
-                        //SHOW CPANEL
+
                         CPanel CPWindow = new CPanel();
                         CPWindow.Show();
 
-                        //HIDE LOGIN PANEL
                         this.Hide();
                     }
-                }else
+                }
+                else
                 {
                     CSTool.errorMessage("Incorrect Username or password.");
                 }
