@@ -43,10 +43,6 @@ namespace CS_CRUD_SQLServer
             {
                 UpdateUser();
             }
-            else if (dialogResult == DialogResult.No)
-            {
-                //do something else
-            }
         }
 
         private void UpdateUser()
@@ -70,10 +66,8 @@ namespace CS_CRUD_SQLServer
 
             conn.Close();
 
-            //refresh table content
             refreshUsersTable();
 
-            //notif
             CSTool.infoMessage("Record has been updated.");
         }
 
